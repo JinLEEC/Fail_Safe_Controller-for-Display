@@ -99,7 +99,7 @@ always@(negedge n_reset, posedge clock)
                       (aw_clk_over | aw_clk_low | aw_clk_exact) ? 12'b0 :
                       (aw_clk_cnt == active_width) ? 12'b0 : aw_clk_cnt + 1'b1;
 
-// active width clock counter 2-delay -> aw_clk_cnt 의 값을 2-clock delay 시켜 eld_flag_2d 와의 타이밍을 맞추기 위함.
+// active width clock counter 2-delay 
 reg [11:0] aw_clk_cnt_1d, aw_clk_cnt_2d;
 always@(negedge n_reset, posedge clock)
     if(!n_reset) begin
